@@ -1,0 +1,5 @@
+﻿EmptyElement  EmptyElement  EmptyElement  Unlimited  Common
+StatsText  String  StatsText  Unlimited  Common
+PluginText  String  PluginText  Unlimited  Common
+PluginName  String  plugin_status  Unlimited  Common
+PluginOut  String  PluginOut  Unlimited  Common

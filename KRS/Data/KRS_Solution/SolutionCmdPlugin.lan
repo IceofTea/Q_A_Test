@@ -1,0 +1,40 @@
+﻿{// krs stats + plugin list/run：KRSStats/PluginList/PluginRun 均为插件提案映射
+}
+{
+    [
+        KRSStats
+        EmptyElement
+        StatsText
+        Tractable
+    ][
+        PluginList
+        EmptyElement
+        PluginText
+        Tractable
+    ]
+
+    PluginRun
+    PluginName
+    PluginOut
+    TraUntractable
+
+    CMDPutString
+    StatsText
+    EmptyElement
+    TraUntractable
+
+    CMDPutString
+    PluginText
+    EmptyElement
+    TraUntractable
+
+    CMDPutString
+    PluginOut
+    EmptyElement
+    TraUntractable
+
+    CMDFlushOutput
+    EmptyElement
+    EmptyElement
+    TraUntractable
+}

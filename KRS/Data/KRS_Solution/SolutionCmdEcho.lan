@@ -1,0 +1,18 @@
+﻿{// echo：读入参数再输出——CMDReadString 为插件提案（定义域 Null，值域 StreamSet）
+}
+{
+    CMDReadString
+    EmptyElement
+    InText
+    Tractable
+
+    CMDPutString
+    InText
+    EmptyElement
+    TraUntractable
+
+    CMDFlushOutput
+    EmptyElement
+    EmptyElement
+    TraUntractable
+}
