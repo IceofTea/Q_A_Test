@@ -1,7 +1,8 @@
-// qacmd_plugin.cpp —— 内核直接插件示例：CMD 输出/等待/缓冲映射
+﻿// qacmd_plugin.cpp —— 内核直接插件示例：CMD 输出/等待/缓冲映射
 // 契约见 app\docs\内核直接插件标准.md；映射纪律见 map-library-development-standard skill
 // 编译：cl /LD /EHsc qacmd_plugin.cpp /Fe:qacmd_plugin.dll
 #include <cstdio>
+#include <cstring>
 #include <windows.h>
 
 // ---------- 与内核同构的最小 ESM 头（实际链接时用内核 Lib.h.cpp 的类型） ----------
