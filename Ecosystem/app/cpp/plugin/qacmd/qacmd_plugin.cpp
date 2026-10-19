@@ -10,7 +10,8 @@ struct Set;
 typedef bool (*SetTestFunction)(Element& Ele, Set& S);
 typedef bool (*MapFunction)(Element& Domain, Element& Range);
 struct Set { Element SetParameter; SetTestFunction TestFunction; };
-struct Map { Set* Domain; Set* Range; MapFunction MapActive; };
+struct Map { Set* Domain; Set* Range; MapFunction MapActive;
+    Map(Set* d, Set* r, MapFunction f) : Domain(d), Range(r), MapActive(f) {} };
 
 // ---------- 内核侧既有集合（由符号表按语义名绑定，插件内声明为外部引用） ----------
 // NullElementSet / NullElement / UIntSet / StreamSet 由内核提供，插件不重复定义
