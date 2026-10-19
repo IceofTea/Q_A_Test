@@ -1,0 +1,8 @@
+﻿{// 复刻 hello 命令：仅用内核已有映射，当前即可在真机执行
+}
+{
+    CMDPutHelloWorld
+    EmptyElement
+    EmptyElement
+    Tractable
+}

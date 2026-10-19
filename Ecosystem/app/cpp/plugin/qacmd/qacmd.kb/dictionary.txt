@@ -1,0 +1,6 @@
+# qacmd_plugin 意向性知识库 · 字典
+# 格式：本插件专属质性/名词 → 超索引条目（内核导入时合并进总字典）
+# 质性名                    超索引        语义
+QACMD.OutputCounter        QCMD.0001     输出调用计数意向性对象的质性（质料=UInt 计数）
+QACMD.LastOutputText       QCMD.0002     最近一次输出文本意向性对象的质性（质料=Stream）
+QACMD.Config               QCMD.0003     插件配置意向性对象的质性（质料=键值序偶序列）

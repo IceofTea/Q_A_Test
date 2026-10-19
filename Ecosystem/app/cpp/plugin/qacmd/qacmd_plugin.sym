@@ -1,0 +1,7 @@
+# qacmd_plugin 符号表 v0.1 —— 内核按本表从 DLL 解析元素/集合/映射
+# 行格式：条目类别  导出名                   内核语义名        定义域集合     值域集合      备注
+Set      QACMDSet                QACMDSet         -             -              插件元素集合
+Map      CMDPutStringFunction    CMDPutString     StreamSet     NullElementSet 不换行不flush输出
+Map      CMDSleepFunction        CMDSleep         UIntSet       NullElementSet 毫秒级阻塞等待
+Map      CMDFlushOutputFunction  CMDFlushOutput   NullElement   NullElementSet fflush(stdout)等价
+Element  QACMDVersion            QACMDVersionInfo -             -              插件版本信息元素

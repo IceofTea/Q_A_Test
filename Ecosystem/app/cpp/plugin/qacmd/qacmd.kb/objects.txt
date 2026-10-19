@@ -1,0 +1,18 @@
+# qacmd_plugin 意向性知识库 · 意向性对象存储文件
+# 序列化格式对齐 FstreamWriteIntentionalityObject（Doc/MD/Intentionality-Project）
+# 每对象两记录：质性（超索引）+ 质料（信息实体）
+
+# 对象1：输出计数器 —— 质性 QCMD.0001，质料 UInt=0
+OBJ  QCMD.0001
+TYPE UInt
+DATA 0
+
+# 对象2：最近输出文本 —— 质性 QCMD.0002，质料 Stream=""
+OBJ  QCMD.0002
+TYPE Stream
+DATA ""
+
+# 对象3：插件配置 —— 质性 QCMD.0003，质料=序偶序列 <键,值>
+OBJ  QCMD.0003
+TYPE OrderedPairSeq
+DATA <"newline_flush","off"> <"default_encoding","utf8">
