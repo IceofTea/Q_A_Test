@@ -1,0 +1,55 @@
+// 庞杂系统 · CMD 命令行脚本复刻方案
+// 复刻对象：运行快照\Deubg_Test\buf.obj 的命令行缓冲行为
+//   A(不换行,不flush) → Sleep3000 → B(前后换行,fflush) → Sleep3000 → C(不换行) → Sleep2000 → 退出
+// 映射状态说明：
+//   CMDPutHelloWorld  = 内核已有映射（Fast_CMD，Fast_CMD.lib）
+//   CMDPutString      = 【插件提案】输出参数中的字符串到控制台，不换行不 flush
+//   CMDSleep          = 【插件提案】按定义域 UInt 毫秒数阻塞轮询
+//   CMDFlushOutput    = 【插件提案】fflush(stdout) 等价物
+// 带【插件提案】的映射即"直接插件"第一批需求，由 kernel-direct-plugin-development skill 设计
+
+{
+}
+{
+    // 输出 A-no-newline（不 flush）
+    CMDPutString
+    TextA
+    EmptyElement
+    Tractable
+
+    // Sleep(3000)
+    CMDSleep
+    UInt3000A
+    EmptyElement
+    TraUntractable
+
+    // 输出 \nB-with-newline\n
+    CMDPutString
+    TextB
+    EmptyElement
+    TraUntractable
+
+    // fflush(stdout)
+    CMDFlushOutput
+    EmptyElement
+    EmptyElement
+    TraUntractable
+
+    // Sleep(3000)
+    CMDSleep
+    UInt3000B
+    EmptyElement
+    TraUntractable
+
+    // 输出 C-no-newline-end（不 flush，退出时 CRT 收尾）
+    CMDPutString
+    TextC
+    EmptyElement
+    TraUntractable
+
+    // Sleep(2000)
+    CMDSleep
+    UInt2000
+    EmptyElement
+    TraUntractable
+}

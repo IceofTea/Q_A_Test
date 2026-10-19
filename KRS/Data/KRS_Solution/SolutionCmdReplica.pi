@@ -1,0 +1,8 @@
+// 参数表：参数名 类型 基础信息 语境 参数状态
+EmptyElement  EmptyElement  EmptyElement  Unlimited  Common
+TextA   String  A-no-newline         Unlimited  Common
+TextB   String  \nB-with-newline\n   Unlimited  Common
+TextC   String  C-no-newline-end     Unlimited  Common
+UInt3000A  UInt  3000  Unlimited  Common
+UInt3000B  UInt  3000  Unlimited  Common
+UInt2000   UInt  2000  Unlimited  Common
