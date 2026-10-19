@@ -5,3 +5,7 @@ Map      CMDPutStringFunction    CMDPutString     StreamSet     NullElementSet �
 Map      CMDSleepFunction        CMDSleep         UIntSet       NullElementSet 毫秒级阻塞等待
 Map      CMDFlushOutputFunction  CMDFlushOutput   NullElement   NullElementSet fflush(stdout)等价
 Element  QACMDVersion            QACMDVersionInfo -             -              插件版本信息元素
+Map      CMDReadStringFunction   CMDReadString    NullElement   StreamSet      从stdin读一行到流元素
+Map      KRSStatsFunction        KRSStats         NullElement   StreamSet      KRS知识域统计(待宿主api)
+Map      PluginListFunction      PluginList       NullElement   StreamSet      列出已注册插件
+Map      PluginRunFunction       PluginRun        StreamSet     StreamSet      按名调用插件映射

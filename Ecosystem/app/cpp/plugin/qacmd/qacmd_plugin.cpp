@@ -88,3 +88,23 @@ namespace Code_Test {
     Map QACMDTotalTest(nullptr, nullptr, QACMDTotalTestFunction);
 }
 #endif
+
+// ---------- 补缺口：CMDReadString / KRSStats / PluginList / PluginRun ----------
+extern "C" __declspec(dllexport) bool CMDReadStringFunction(Element& Domain, Element& Range) {
+    // 从 stdin 读一行到值域流元素（简化版：固定缓冲，正式版按内核流元素布局分配）
+    static char buf[1024]; if (!fgets(buf, sizeof buf, stdin)) return false;
+    Range.KeySpace = buf; Range.Size = (unsigned int)strlen(buf); return true;
+}
+extern "C" __declspec(dllexport) bool KRSStatsFunction(Element& Domain, Element& Range) {
+    // 统计 KRS 知识域数量——内核侧数据经宿主句柄获取（Init 时挂接），此处输出占位流
+    static char msg[] = "krs stats: pending kernel host api\n";
+    Range.KeySpace = msg; Range.Size = sizeof(msg)-1; return true;
+}
+extern "C" __declspec(dllexport) bool PluginListFunction(Element& Domain, Element& Range) {
+    static char msg[] = "qacmd_plugin v0.1\n";
+    Range.KeySpace = msg; Range.Size = sizeof(msg)-1; return true;
+}
+extern "C" __declspec(dllexport) bool PluginRunFunction(Element& Domain, Element& Range) {
+    // 按定义域插件名调用对应映射入口（符号表查找→MapActive）；占位：回显插件名
+    Range.KeySpace = Domain.KeySpace; Range.Size = Domain.Size; return Domain.Size>0;
+}
